@@ -4,21 +4,43 @@ import random
 # carregando a planilha do Excel
 book = openpyxl.load_workbook('candidatos.xlsx')
 
-# selecionando página para dep. federal
-dep_federal_page = book['dep-federal']
 
-
-# imprimindo todos os candidatos(separados por cargo)
+# imprimir todos os candidatos(separados por cargo)
 def imprimir_todos(lista_candidatos):
-    global page
-    if lista_candidatos == 'dep-federal':
-        page = book['dep-federal']
-
-    if lista_candidatos == 'presidente':
-        page = book['presidente']
-
-    for rows in page.iter_rows(min_row=1, max_row=200):
+    page = book[lista_candidatos]
+    for rows in page.iter_rows():
         print(rows[0].value, rows[1].value)
 
 
-imprimir_todos('dep-federal')
+# imprimir todos os candidatos a deputado federal
+def imprimir_dep_federal():
+    page = book['dep-federal']
+    for rows in page.iter_rows():
+        print(rows[0].value, rows[1].value)
+
+
+# imprimir todos os candidatos a presidente
+def imprimir_presidente():
+    page = book['presidente']
+    for rows in page.iter_rows():
+        print(rows[0].value, rows[1].value)
+
+
+# sortear um candidato a presidente
+def sortear_presidente():
+    page = book['presidente']
+    random_index = random.randint(1, page.max_row)
+    for rows in page.iter_rows(min_row=random_index, max_row=random_index):
+        print(rows[0].value, rows[1].value)
+
+
+# sortear um candidato a presidente
+def sortear_dep_federal():
+    page = book['dep-federal']
+    random_index = random.randint(1, page.max_row)
+    for rows in page.iter_rows(min_row=random_index, max_row=random_index):
+        print(rows[0].value, rows[1].value)
+
+
+sortear_presidente()
+sortear_dep_federal()
