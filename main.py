@@ -19,6 +19,14 @@ def imprimir_dep_federal():
         print(rows[0].value, rows[1].value)
 
 
+# sortear um candidato a dep. federal
+def sortear_dep_federal():
+    page = book['dep-federal']
+    random_index = random.randint(1, page.max_row)
+    for rows in page.iter_rows(min_row=random_index, max_row=random_index):
+        print(rows[0].value, rows[1].value)
+
+
 # imprimir todos os candidatos a presidente
 def imprimir_presidente():
     page = book['presidente']
@@ -29,14 +37,6 @@ def imprimir_presidente():
 # sortear um candidato a presidente
 def sortear_presidente():
     page = book['presidente']
-    random_index = random.randint(1, page.max_row)
-    for rows in page.iter_rows(min_row=random_index, max_row=random_index):
-        print(rows[0].value, rows[1].value)
-
-
-# sortear um candidato a presidente
-def sortear_dep_federal():
-    page = book['dep-federal']
     random_index = random.randint(1, page.max_row)
     for rows in page.iter_rows(min_row=random_index, max_row=random_index):
         print(rows[0].value, rows[1].value)
