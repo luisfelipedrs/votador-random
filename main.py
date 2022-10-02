@@ -24,8 +24,9 @@ def sortear_presidente():
     page = book['presidente']
     random_index = random.randint(1, page.max_row)
     for rows in page.iter_rows(min_row=random_index, max_row=random_index):
-        print(rows[0].value, rows[1].value)
-
+        print('Para presidente:', rows[0].value)
+        print('Número do candidato:',  rows[1].value)
+        print('---------------------------------------------------')
 
 # imprimir todos os candidatos a senador
 def imprimir_senador():
@@ -39,8 +40,9 @@ def sortear_senador():
     page = book['senador']
     random_index = random.randint(1, page.max_row)
     for rows in page.iter_rows(min_row=random_index, max_row=random_index):
-        print(rows[0].value, rows[1].value)
-
+        print('Para senador:', rows[0].value)
+        print('Número do candidato:', rows[1].value)
+        print('---------------------------------------------------')
 
 # imprimir todos os candidatos a governador
 def imprimir_governador():
@@ -54,8 +56,9 @@ def sortear_governador():
     page = book['governador']
     random_index = random.randint(1, page.max_row)
     for rows in page.iter_rows(min_row=random_index, max_row=random_index):
-        print(rows[0].value, rows[1].value)
-
+        print('Para governador:',rows[0].value)
+        print('Núemro do candidato:', rows[1].value)
+        print('---------------------------------------------------')
 
 # imprimir todos os candidatos a deputado federal
 def imprimir_dep_federal():
@@ -69,7 +72,9 @@ def sortear_dep_federal():
     page = book['dep-federal']
     random_index = random.randint(1, page.max_row)
     for rows in page.iter_rows(min_row=random_index, max_row=random_index):
-        print(rows[0].value, rows[1].value)
+        print('Para deputado federal:',rows[0].value)
+        print('Núemro do candidato:', rows[1].value)
+        print('---------------------------------------------------')
 
 
 # imprimir todos os candidatos a dep. distrital
@@ -84,11 +89,14 @@ def sortear_dep_distrital():
     page = book['dep-distrital']
     random_index = random.randint(1, page.max_row)
     for rows in page.iter_rows(min_row=random_index, max_row=random_index):
-        print(rows[0].value, rows[1].value)
+        print('Para deputado distrital:',rows[0].value)
+        print('Núemro do candidato:', rows[1].value)
+        print('---------------------------------------------------')
 
 
-sortear_presidente()
-sortear_senador()
-sortear_governador()
 sortear_dep_federal()
 sortear_dep_distrital()
+sortear_senador()
+sortear_governador()
+sortear_presidente()
+
