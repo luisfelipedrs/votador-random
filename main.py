@@ -30,6 +30,7 @@ def sortear_presidente():
     for rows in page.iter_rows(min_row=random_index, max_row=random_index):
         print('Para presidente:', rows[0].value)
         print('Número do candidato:',  rows[1].value)
+        print('Partido do candidato:',  rows[2].value)
         print('---------------------------------------------------')
 
 # imprimir todos os candidatos a senador
@@ -46,6 +47,7 @@ def sortear_senador():
     for rows in page.iter_rows(min_row=random_index, max_row=random_index):
         print('Para senador:', rows[0].value)
         print('Número do candidato:', rows[1].value)
+        print('Partido do candidato:',  rows[2].value)
         print('---------------------------------------------------')
 
 # imprimir todos os candidatos a governador
@@ -62,6 +64,7 @@ def sortear_governador():
     for rows in page.iter_rows(min_row=random_index, max_row=random_index):
         print('Para governador:',rows[0].value)
         print('Núemro do candidato:', rows[1].value)
+        print('Partido do candidato:',  rows[2].value)
         print('---------------------------------------------------')
 
 # imprimir todos os candidatos a deputado federal
