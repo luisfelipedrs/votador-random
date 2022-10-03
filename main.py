@@ -110,6 +110,3 @@ def escolher_candidatos():
     sortear_senador()
     sortear_governador()
     sortear_presidente()
-
-
-
