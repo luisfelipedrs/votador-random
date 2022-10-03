@@ -103,8 +103,13 @@ def sortear_dep_distrital():
         print('---------------------------------------------------')
 
 
-sortear_dep_federal()
-sortear_dep_distrital()
-sortear_senador()
-sortear_governador()
-sortear_presidente()
+
+def escolher_candidatos():
+    sortear_dep_federal()
+    sortear_dep_distrital()
+    sortear_senador()
+    sortear_governador()
+    sortear_presidente()
+
+
+
