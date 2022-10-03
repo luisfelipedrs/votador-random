@@ -8,9 +8,6 @@ import random
 # carregando a planilha do Excel
 book = openpyxl.load_workbook('candidatos.xlsx')
 
-book2 = openpyxl.load_workbook('Candidatos Dep_FEDERAL.xlsx')
-
-book3 = openpyxl.load_workbook('Candidatos Dep_DISTRITAL.xlsx')
 
 # imprimir todos os candidatos(separados por cargo)
 def imprimir_todos(lista_candidatos):
@@ -79,12 +76,12 @@ def imprimir_dep_federal():
 
 # sortear um candidato a dep. federal
 def sortear_dep_federal():
-    page = book2['Table 1']
+    page = book['dep-federal']
     random_index = random.randint(1, page.max_row)
     for rows in page.iter_rows(min_row=random_index, max_row=random_index):
-        print('Para deputado federal:',rows[2].value)
+        print('Para deputado federal:',rows[0].value)
         print('Núemro do candidato:', rows[1].value)
-        print('Partido do candidato:',  rows[4].value)
+        print('Partido do candidato:',  rows[2].value)
         print('---------------------------------------------------')
 
 
@@ -97,12 +94,12 @@ def imprimir_dep_distrital():
 
 # sortear um candidato a dep. distrital
 def sortear_dep_distrital():
-    page = book3['Table 1']
+    page = book['dep-distrital']
     random_index = random.randint(1, page.max_row)
     for rows in page.iter_rows(min_row=random_index, max_row=random_index):
-        print('Para deputado distrital:',rows[2].value)
+        print('Para deputado distrital:',rows[0].value)
         print('Núemro do candidato:', rows[1].value)
-        print('Partido do candidato:',  rows[4].value)
+        print('Partido do candidato:',  rows[2].value)
         print('---------------------------------------------------')
 
 
